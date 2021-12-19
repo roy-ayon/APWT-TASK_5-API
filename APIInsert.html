@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIInsert</title>
+</head>
+<body>
+    <form action="http://127.0.0.1:8000/api/flatOwner/advertisement/list" method="POST">
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="address" name="address">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">HouseNo</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="houseno" name="houseno">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">FloorNo</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="floorno" name="floorno">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">FlatInfo</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="flatinfo" name="flatinfo">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Rent</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="rent" name="rent">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Status</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="status" name="status">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Permission</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="permission" name="permission">
+            </div>
+        </div>
+        <input type="submit" value="submit">
+      </form>
+      <a href="./apitest.html">Back</a>
+</body>
+</html>

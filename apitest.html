@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>APITest</title>
+    <style>
+        body {
+            font-size: 1.5rem;
+            margin: 3% 15%;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        .display { 
+            background-color: #EFEFEF;
+        }
+        img {
+            float: left;
+            margin: 10px 0;
+            padding-right: 7%;
+            padding-left: 10px;
+        }
+        ul {
+            padding: 40px 0 40px;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="./APIInsert.html">API Insert</a><br>
+    <button id="load">Load List</button>
+    <h1>API List</h1>
+    <section id="show"></section>
+    <script>
+        document.getElementById('load').addEventListener('click', load_user);
+        function load_user(){
+            var request = new XMLHttpRequest();
+            request.open('GET','http://127.0.0.1:8000/api/flatOwner/advertisement/list');
+            request.onload = function() {
+                if(request.status==200){
+                    var p = JSON.parse(request.responseText)
+                    var output= ' ';
+                    for(var i in p){
+                        output +=
+                        '<div class="display">' +
+                        '<ul>' +
+                        '<li>ID: '+p[i].id+'</li>' +
+                        '<li>Address: '+p[i].address+'</li>' +
+                        '<li>HouseNo: '+p[i].houseno+'</li>'+
+                        '<li>FloorNo: '+p[i].floorno+'</li>'+
+                        '<li>FlatInfo: '+p[i].flatinfo+'</li>'+
+                        '<li>Rent: '+p[i].rent+'</li>'+
+                        '<li>Status: '+p[i].status+'</li>'+
+                        '<li>Permission: '+p[i].permission+'</li>'
+                        '</ul>'+'</div>';
+                        }
+                    document.getElementById('show').innerHTML= output;
+                }
+            }
+            request.send();
+        }
+    </script>
+</body>
+</html>
